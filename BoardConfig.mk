@@ -44,19 +44,18 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=blade2 console=null
 
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-BOARD_FM_DEVICE := si4708
+BOARD_HAVE_FM_RADIO := false
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
-# Connectivity - Wi-Fi
-WPA_SUPPLICANT_VERSION := VER_0_6_X
+# Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-# Blade2 uses bcm4330
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH := "/system/etc/fw_4330b1.bin"
-WIFI_DRIVER_FW_AP_PATH := "/system/etc/fw_4330_b1_apsta.bin"
-WIFI_DRIVER_MODULE_NAME := "dhd"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/fw_4330b1.bin,nvram_path=/system/etc/nv_4330b1.txt"
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := bcm4330
+WIFI_DRIVER_MODULE_PATH	    := "/system/lib/dhd.ko"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/fw_4330b1_apsta.bin"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/fw_4330_b1.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/fw_4330b1.bin,nvram_path=/system/etc/nv_4330b1.txt"
+WIFI_DRIVER_MODULE_NAME     := "dhd"
 
 WITH_JIT := true
 ENABLE_JSC_JIT := true
@@ -67,9 +66,6 @@ JS_ENGINE := v8
 
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/zte/blade2/prebuilt/lib/egl/egl.cfg
-
-# No fallback font by default (space savings)
-#NO_FALLBACK_FONT:=true
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
@@ -84,21 +80,21 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
-# # cat /proc/mtd
-# dev:    size   erasesize  name
-# mtd0: 00600000 00020000 "recovery"
-# mtd1: 00400000 00020000 "boot"
-# mtd2: 00180000 00020000 "splash"
-# mtd3: 00080000 00020000 "misc"
-# mtd4: 03980000 00020000 "cache"
-# mtd5: 0dc00000 00020000 "system"
-# mtd6: 0a280000 00020000 "userdata"
-# mtd7: 00100000 00020000 "oem"
-# mtd8: 00180000 00020000 "persist"
+## cat /proc/mtd
+#dev:    size   erasesize  name
+#mtd0: 00600000 00020000 "recovery"
+#mtd1: 00400000 00020000 "boot"
+#mtd2: 00180000 00020000 "splash"
+#mtd3: 00080000 00020000 "misc"
+#mtd4: 03980000 00020000 "cache"
+#mtd5: 0c800000 00020000 "system"
+#mtd6: 0a280000 00020000 "userdata"
+#mtd7: 01500000 00020000 "oem"
+#mtd8: 00180000 00020000 "persist"
 
-BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x00500000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00500000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x0dc00000
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x00400000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00600000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x0c800000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0a280000
 BOARD_FLASH_BLOCK_SIZE := 131072
 

@@ -96,8 +96,8 @@ PRODUCT_COPY_FILES += \
 
 # Kernel Modules
 PRODUCT_COPY_FILES += \
-    device/zte/blade2/prebuilt/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-    device/zte/blade2/prebuilt/lib/modules/2.6.35.7-pref+/zram.ko:system/lib/modules/2.6.35.7-pref+/zram.ko 
+    device/zte/blade2/prebuilt/lib/dhd.ko:system/lib/dhd.ko \
+    device/zte/blade2/prebuilt/lib/modules/2.6.35.7-perf+/zram.ko:system/lib/modules/2.6.35.7-perf+/zram.ko 
 
 # WiFi firmware
 PRODUCT_COPY_FILES += \

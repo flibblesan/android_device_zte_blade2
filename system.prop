@@ -12,6 +12,6 @@ dalvik.vm.dexopt-data-only=1
 ro.sf.lcd_density=240
 ro.sf.hwrotation=180
 
-wifi.interface=wlan0
+wifi.interface=eth0
 ro.compcache.default=0
 persist.sys.use_16bpp_alpha=1
