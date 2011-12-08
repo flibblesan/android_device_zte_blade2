@@ -41,6 +41,7 @@ TARGET_BOOTLOADER_BOARD_NAME := blade2
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_FORCE_STATIC_A2DP := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=blade2 console=null
 
@@ -52,9 +53,9 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := bcm4330
 WIFI_DRIVER_MODULE_PATH	    := "/system/lib/dhd.ko"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/fw_4330b1_apsta.bin"
-WIFI_DRIVER_FW_STA_PATH     := "/system/etc/fw_4330_b1.bin"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/fw_4330b1.bin,nvram_path=/system/etc/nv_4330b1.txt"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/fw_4330_b1_apsta.bin"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/fw_4330b1.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/fw_4330b1.bin nvram_path=/system/etc/nv_4330b1.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
 
 WITH_JIT := true
